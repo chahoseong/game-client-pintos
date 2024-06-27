@@ -47,52 +47,13 @@ Pintos UTSC edition [링크](https://thierrysans.me/CSCC69/projects/WWW/pintos.h
 1. "실행 및 디버깅" 메뉴를 선택하고 "create a launch.json" 링크를 클릭한다. (디버거는 아무거나 선택한다.)
 2. launch.json 파일을 다음과 같이 작성한다.
     ```json
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "name": "Attach to Pintos",
             "type": "gdb",
             "request": "attach",
-            // we attach executable on kernel.o for now, but as project goes on, you need to change this properly
             "executable": "${workspaceFolder}/src/threads/build/kernel.o",
-            // to connect debugpintos, we use port 1234
-            "target": ":1234",
-            "remote": true,
-            "cwd": "${workspaceRoot}",
-            "gdbpath": "/pintos/src/utils/pintos-gdb"
-        }
-    ]
-    ```
-3. project를 진행할 때마다, configurations에서 executable을 해당 project 폴더로 수정하거나
-새로운 항목을 추가하면 된다.
-    ```json
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Attach to Pintos (thread)",
-            "type": "gdb",
-            "request": "attach",
-            // we attach executable on kernel.o for now, but as project goes on, you need to change this properly
-            "executable": "${workspaceFolder}/src/threads/build/kernel.o",
-            // to connect debugpintos, we use port 1234
-            "target": ":1234",
-            "remote": true,
-            "cwd": "${workspaceRoot}",
-            "gdbpath": "/pintos/src/utils/pintos-gdb"
-        },
-        {
-            "name": "Attach to Pintos (userprog)",
-            "type": "gdb",
-            "request": "attach",
-            // we attach executable on kernel.o for now, but as project goes on, you need to change this properly
-            "executable": "${workspaceFolder}/src/userprog/build/kernel.o",
-            // to connect debugpintos, we use port 1234
             "target": ":1234",
             "remote": true,
             "cwd": "${workspaceRoot}",
